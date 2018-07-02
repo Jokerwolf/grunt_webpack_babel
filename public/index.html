@@ -5,8 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Testing</title>
+  <script  src="libs/require.js"></script>
 </head>
 <body>
-  <script src="../dist/bundle.js"></script>
+  <section class="main-content">
+    Hello, I'm main content.
+    <div class="content">
+      Hi, I'm simple content.
+    </div>
+    <div class="additional-content">
+      Hi, I'm additional content.
+    </div>
+  </section>
+  <script>
+    require(["old/main"], function(m) {
+      console.log("main loaded requirejs");
+      require(["test"], function(t) {
+        console.log("Test module loaded as requirejs");
+        t.arrow2();
+      })
+    });
+  </script>
 </body>
 </html>

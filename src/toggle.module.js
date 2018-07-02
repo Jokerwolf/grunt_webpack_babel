@@ -1,18 +1,8 @@
-// class Toggle {
-//   // arrow = () => {
-//   //   console.log(`I'm so arrow`);
-//   // };
-
-//   public init() {
-//     console.log(`Initializing`);
-//     // this.arrow();
-//   }
-// }
-
-// export { Toggle };
+import { default as something } from './old/old.module';
 
 const arrow = () => {
   console.log(`I'm so arrow`);
+  console.log(`And using ${something}`);
 };
 
 export { arrow };

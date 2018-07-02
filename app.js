@@ -1,3 +1,5 @@
-import { arrow } from './src/toggle.module';
+import './src/toggle.module';
+import './src/test';
 
-arrow();
+import "./src/styles/external.css";
+import "./src/styles/main.scss";
