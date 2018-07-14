@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Testing</title>
-  <script  src="libs/require.js"></script>
+  <script src="libs/require.js"></script>
 </head>
 <body>
   <section class="main-content">
@@ -20,10 +20,15 @@
   <script>
     require(["old/main"], function(m) {
       console.log("main loaded requirejs");
-      require(["test"], function(t) {
-        console.log("Test module loaded as requirejs");
-        t.arrow2();
-      })
+      require(["old/old.module", "test"], function(o, t) {
+        console.log("old.module loaded as requirejs");
+        console.log(o);
+        console.log(t);
+      });
+      require(["MyLibrary"], function(myLib) {
+        console.log("lib is", myLib);
+        myLib.arrowModule.arrow();
+      });
     });
   </script>
 </body>

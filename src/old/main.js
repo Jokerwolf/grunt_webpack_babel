@@ -5,7 +5,8 @@ require.config({
     //never includes a ".js" extension since
     //the paths config could be for a directory.
     paths: {
-        "test": 'bundle'
+        "test": 'bundle',
+        "MyLibrary": 'bundle'
     }
 });
 // require(["old/old.module"], function(oldModule) {

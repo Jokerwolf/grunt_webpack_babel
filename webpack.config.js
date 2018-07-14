@@ -15,22 +15,10 @@ const babelLoader = {
   test: /\.js$/,
   exclude: commonExcludes,
   use: {
-    loader: "babel-loader",
-    options: {
-      "presets": [
-        ["@babel/preset-env", {
-          "targets": {
-             "browsers": ["ie 9"]
-            }
-          }
-        ]
-      ],
-      "plugins": [
-        "transform-es2015-modules-amd"
-      ]
-    }
+    loader: "babel-loader"
   }
 };
+
 const sassLoader = {
   test: /\.(s*)css$/,
   exclude: commonExcludes,
@@ -42,6 +30,7 @@ const sassLoader = {
 };
 
 const rules = [babelLoader, sassLoader];
+
 const plugins = [
   new CleanWebpackPlugin(), 
   new HtmlWebpackPlugin({
@@ -57,6 +46,8 @@ const config = {
   output: {
       path: path.resolve(__dirname, "dist"),
       filename: "bundle.js",
+      library: 'MyLibrary',
+      libraryTarget: 'amd'
   },
   module: { rules },
   plugins
